@@ -1,0 +1,12 @@
+<h1>CHECKOUT!!</h1>
+<div *ngFor = "let item of items"><!--recorrer el arreglo de items que es la data que trae mi servicio, en la variable item, guardo lo que traigo de items-->
+    <h2>{{item.title}} </h2>
+    <p>{{item.description}} </p>
+    <p>{{item.category}}</p>
+    <img [src]="item.image" alt="{{item.image}}">
+</div>
+<div>
+    <button>Complete Purchase</button>
+    <br><br>
+    <a [routerLink] = "['']"> Seguir Comprando</a>
+</div>

@@ -1,0 +1,150 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">STORE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+            <div>
+                <a [routerLink]="['cart']">
+                    <button  class="btn btn-success">Ver Carrito <i class="fa fa-cart-arrow-down"></i></button>
+                </a>        
+                    <!--<a class="nav-link" [routerLink]="['cart']">Ver Carrito</a> Se pone cart porque es la ruta definida en el archivo app.routes -->
+           </div>
+        </ul>
+        <div class="d-flex mb-4">
+          <input class="form-control me-2" type="number" [(ngModel)]="productId" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" (click)="getProductById()">Search</button>
+        </div>  
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+<!-- <div>
+    <input class="border border-primary me-2 mb-2" type="number" [(ngModel)]="productId" placeholder="Enter Product Id">
+    <button class="btn btn-outline-primary" (click)="getProductById()">Search</button>
+</div> -->
+
+<div class="d-flex justify-content-center flex-wrap mt-4" *ngIf = "selectedProduct">
+  
+    <div class="card text-center" style = "width: 70%; height: 70%">
+
+        <div class="text-center">
+            <img [src]="selectedProduct.image" alt="{{selectedProduct.image}}" class="card-img-top" style="width: 20%; height: 20%;">
+        </div>
+        <div class="card-body">
+            <h2 class="card-title">{{selectedProduct.title}}</h2>
+            <br>
+            <span class="fw-bold d-inline description">Description: </span>
+            <p class="card-text d-inline">{{selectedProduct.description}}</p>
+            <br><br>
+            <span class="fw-bold">Category: </span>
+            <p class="card-text d-inline">{{selectedProduct.category}}</p>
+        </div>
+    </div>    
+</div>
+
+
+
+<div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4 mt-4">
+    <div class="col card" style="width: 18rem; margin-right: 5px;margin-left: 70px;" *ngFor = "let product of productList"> 
+                <div class="img-principal">
+                    <img class="card-img-top" [src]="product.image" alt="{{product.title}}" style="max-width: 100px;">
+                </div>
+                <div class="card-body"> 
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <span class="fw-bold">Description: </span>
+                    <p class="card-text description">{{product.description}}</p>
+                    <span class="fw-bold">Category: </span>
+                    <p class="card-text">{{product.category}}</p>
+                </div>
+                    <button class="btn btn-primary" (click)="addToCart(product)">Add to cart <i class="fa fa-cart-arrow-down"></i></button>
+    </div>    
+</div>
+
+<footer class="bg-body-tertiary text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          data-mdb-ripple-init class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#"
+          role="button"
+          ><i class="fa fa-facebook-official"></i></a>
+  
+        <!-- Twitter -->
+        <a
+          data-mdb-ripple-init class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#"
+          role="button"
+          ><i class='fa fa-twitter'></i></a>
+  
+           
+        <!-- Instagram -->
+        <a
+          data-mdb-ripple-init class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#"
+          role="button"
+          ><i class="fa fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          data-mdb-ripple-init class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#"
+          role="button"
+          ><i class="fa fa-linkedin-square"></i
+        ></a>
+        <!-- Github -->
+        <a
+          data-mdb-ripple-init class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#"
+          role="button"
+          ><i class="fa fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">LEONARDO LOPEZ DESIGNS</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+     
+
+        
+
+<!-- <div *ngFor = "let product of productList">
+    <h2>{{product.title}}</h2>
+    <p>{{product.description}}</p>
+    <p>{{product.category}}</p>
+    <img [src]="product.image" alt="{{product.image}}">
+    <button (click)="addToCart(product)">Add to cart</button>
+</div>
+
+<div>
+     <a [routerLink]="['cart']">Ver Carrito</a> Se pone cart porque es la ruta definida en el archivo app.routes 
+</div> -->
