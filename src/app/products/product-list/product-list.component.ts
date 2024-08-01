@@ -14,7 +14,6 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-[x: string]: any;
 
   productId!: number;
   selectedProduct: Product | undefined;
