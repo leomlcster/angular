@@ -25,18 +25,19 @@ export class CartService {
 
     }
 
-    /*deleteItem(product: any){
+    deleteItem(product: any){
       const index = this.items.findIndex((item: any) => item === product);
       if (index > -1) {
         this.items.splice(index, 1);
     }
-  }*/
+    window.alert('Eliminaste el producto');
+  }
 
-    /*cleanCart() {
+    cleanCart() {
+      window.alert('Limpiaste tu carrito');
       this.items = [];
       return this.items; //Devolvemos el arreglo vacío
-      
-    }*/
+    }
 
 }
 /*1. find 2.splice

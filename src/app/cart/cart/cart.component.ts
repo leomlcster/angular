@@ -22,14 +22,14 @@ product: any;
 
       }
       
-      /*cleanCart(){
+      cleanCart(){
         this.items = this.cartService.cleanCart(); //llama el método getItems de mi servicio para que se muestren los productos vacíos en el carrito.
       }
 
-      /*deleteProduct(product: any){
+      deleteProduct(product: any){
         this.cartService.deleteItem(product); //llama el método deleteItems de mi servicio para que se elimine el producto del carrito.
         this.items = this.cartService.getItems(); //llama el método getItems de mi servicio para que se muestren los productos actualizados en el carrito.
-      }*/
+      }
       
 
       

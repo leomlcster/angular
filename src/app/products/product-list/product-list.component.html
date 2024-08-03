@@ -21,9 +21,9 @@
                     <!--<a class="nav-link" [routerLink]="['cart']">Ver Carrito</a> Se pone cart porque es la ruta definida en el archivo app.routes -->
            </div>
         </ul>
-        <div class="d-flex mb-4">
+        <div class="d-flex">
           <input class="form-control me-2" type="number" [(ngModel)]="productId" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" (click)="getProductById()">Search</button>
+          <button class="btn btn-outline-info" (click)="getProductById()">Search</button>
         </div>  
         
       </div>
@@ -37,7 +37,7 @@
     <button class="btn btn-outline-primary" (click)="getProductById()">Search</button>
 </div> -->
 
-<div class="d-flex justify-content-center flex-wrap mt-4" *ngIf = "selectedProduct">
+<div class="d-flex justify-content-center flex-wrap mt-4 text-bg-light" *ngIf = "selectedProduct">
   
     <div class="card text-center" style = "width: 70%; height: 70%">
 
@@ -59,7 +59,7 @@
 
 
 <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 g-4 mt-4">
-    <div class="col card" style="width: 18rem; margin-right: 5px;margin-left: 70px;" *ngFor = "let product of productList"> 
+    <div class="col card text-bg-light" style="width: 18rem; margin-right: 5px;margin-left: 70px;" *ngFor = "let product of productList"> 
                 <div class="img-principal">
                     <img class="card-img-top" [src]="product.image" alt="{{product.title}}" style="max-width: 100px;">
                 </div>
